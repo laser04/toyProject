@@ -1,6 +1,12 @@
 import logo from '../img/logo.png';
 import {useState} from "react";
+
 const Header = () => {
+    const MenuLink = ( href : string, text: string) => {
+        return(
+            <li className="p-3 text-xs text-gray-400"><a href={href}>{text}</a></li>
+        );
+    }
     const [menu, setMenu] = useState(false);
     return (
         <div className="header">
@@ -9,21 +15,21 @@ const Header = () => {
                     <div className="top-left float-left">
                         <div className="boardMenu">
                             <ul className="justify-center flex m-2 ml-20">
-                                <li className="p-3 text-xs text-gray-400"><a href="#">공지사항</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">구매후기</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">Q&A</a></li>
+                                {MenuLink("notice","공지사항")}
+                                {MenuLink("review","상품후기")}
+                                {MenuLink("qna","Q&A")}
                             </ul>
                         </div>
                     </div>
                     <div className="top-right float-right">
                         <div className="userMenu">
                             <ul className="justify-center flex m-2 mr-20">
-                                <li className="p-3 text-xs text-gray-400"><a href="#">LOGIN</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">JOIN</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">CART</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">ORDER</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">TRACKING</a></li>
-                                <li className="p-3 text-xs text-gray-400"><a href="#">MY PAGE</a></li>
+                                {MenuLink("login","LOGIN")}
+                                {MenuLink("join","JOIN")}
+                                {MenuLink("cart","CART")}
+                                {MenuLink("order","ORDER")}
+                                {MenuLink("tracking","TRACKING")}
+                                {MenuLink("my-page","MY PAGE")}
                             </ul>
                         </div>
                     </div>

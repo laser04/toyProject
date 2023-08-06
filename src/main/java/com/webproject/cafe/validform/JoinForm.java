@@ -9,8 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 @Data
 @ToString
-public class SignUpForm {
-
+public class JoinForm {
     @NotBlank
     @Length(min = 3, max = 20)
     private String nickname;
@@ -22,5 +21,4 @@ public class SignUpForm {
     @NotBlank
     @Length(min = 8, max = 20)
     private String password;
-
 }
